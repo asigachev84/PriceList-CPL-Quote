@@ -173,8 +173,8 @@ while pn_regexp.match(old_worksheet.cell(i, pn_cell[1]).value) != None or pn_reg
 #Если не сервисная, ищем в Product List и подставляем значения C и Rn
     
         try:
-            print('Найден в CPL, ячейка ' + str(findcellbyvalue_onecolumn(old_worksheet.cell(i, pn_cell[1]).value, cpl_worksheet,0)))
             c_cat_cell = findcellbyvalue_onecolumn(old_worksheet.cell(i, pn_cell[1]).value, cpl_worksheet,0)
+            print('Найден в CPL, ячейка ' + str(c_cat_cell))
             new_worksheet.cell(row=j,column=10).value = cpl_worksheet.cell(c_cat_cell[0], c_cat_cell[1]+1).value
             new_worksheet.cell(row=j,column=11).value = cpl_worksheet.cell(c_cat_cell[0], c_cat_cell[1]+10).value
 #C3/C4 помечаем красным и полужирным
